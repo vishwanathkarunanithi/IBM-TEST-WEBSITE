@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You IBM</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .animate-fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        .animate-delay-100 { animation-delay: 0.1s; }
+        .animate-delay-200 { animation-delay: 0.2s; }
+        .animate-delay-300 { animation-delay: 0.3s; }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* IBM-ish Blue Gradient Background */
+        .tech-bg {
+            background-color: #f3f4f6;
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(59, 130, 246, 0.1) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(37, 99, 235, 0.1) 0px, transparent 50%);
+        }
+    </style>
+</head>
+<body class="tech-bg min-h-screen flex flex-col text-gray-800">
+
+    <!-- Navbar / Header -->
+    <header class="w-full py-6 px-4 md:px-8 flex justify-between items-center bg-white/80 backdrop-blur-md shadow-sm fixed top-0 z-10">
+        <div class="flex items-center gap-2">
+            <i data-lucide="cpu" class="text-blue-700 w-6 h-6"></i>
+            <span class="font-bold text-xl tracking-tight text-slate-800">Student<span class="text-blue-600">Voice</span></span>
+        </div>
+        <div class="text-sm font-medium text-gray-500">
+            AI Workshop Edition
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow flex items-center justify-center p-4 mt-20 mb-10">
+        <div class="max-w-3xl w-full bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100 animate-fade-in-up">
+            
+            <!-- Decorative Banner -->
+            <div class="h-32 bg-gradient-to-r from-blue-800 via-blue-600 to-indigo-600 relative overflow-hidden flex items-center justify-center">
+                <!-- Abstract circles -->
+                <div class="absolute top-0 left-0 w-32 h-32 bg-white/10 rounded-full -translate-x-10 -translate-y-10"></div>
+                <div class="absolute bottom-0 right-0 w-24 h-24 bg-white/10 rounded-full translate-x-5 translate-y-5"></div>
+                
+                <i data-lucide="brain-circuit" class="text-white/20 w-24 h-24 absolute"></i>
+            </div>
+
+            <div class="p-8 md:p-12 text-center">
+                <div class="inline-flex items-center justify-center p-3 bg-blue-50 rounded-full mb-6 animate-fade-in-up animate-delay-100">
+                    <i data-lucide="award" class="w-8 h-8 text-blue-600"></i>
+                </div>
+
+                <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4 animate-fade-in-up animate-delay-200">
+                    Thank You, <span class="text-blue-700">IBM!</span>
+                </h1>
+
+                <p class="text-lg text-gray-600 leading-relaxed mb-8 animate-fade-in-up animate-delay-300">
+                    We extend our heartfelt gratitude to the <strong>IBM Team</strong> for visiting our campus and conducting an enlightening session on 
+                    <span class="text-blue-600 font-semibold">Artificial Intelligence</span>.
+                    <br><br>
+                    Your insights into the future of technology, generative AI, and industry trends have inspired us immensely. Thank you for bridging the gap between academia and industry with such expertise and enthusiasm.
+                </p>
+
+                <!-- Signature / From section -->
+                <div class="border-t border-gray-100 pt-8 animate-fade-in-up animate-delay-300">
+                    <p class="text-gray-500 italic">With gratitude,</p>
+                    <p class="font-semibold text-gray-800 mt-1">The Students & Faculty</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-6 text-center text-gray-500 text-sm animate-fade-in-up animate-delay-300">
+        <div class="flex flex-col items-center gap-2">
+            <div class="flex items-center gap-2 bg-white/50 px-4 py-2 rounded-full border border-gray-200 shadow-sm">
+                <i data-lucide="calendar-days" class="w-4 h-4"></i>
+                <span>Website Created on: <span id="date-display" class="font-medium text-blue-600"></span></span>
+            </div>
+            <p class="mt-2 opacity-75">&copy; 2026 Student Committee</p>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Set the creation date
+        // Note: You can change this date string to whatever static date you prefer.
+        // Currently setting it to today's date (Jan 8, 2026) dynamically, or you can hardcode it.
+        const creationDate = "January 8, 2026"; 
+        document.getElementById('date-display').textContent = creationDate;
+    </script>
+</body>
+</html>
